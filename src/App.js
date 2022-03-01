@@ -1,23 +1,34 @@
-import logo from './logo.svg';
+import {useState} from "react"
 import './App.css';
 
 function App() {
+  const [username,setUsername]=useState("")
+  const [comment,setComment]=useState("")
+  const [post,setPost]= useState([])
+ const addPost=()=>{
+
+     const items= {
+       id:post.length+1,
+       Username:username,
+       comment:comment
+     }
+     setComment('')
+     setUsername('')
+     setPost([...post,items])
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <input name='name' value={username} placeholder='Enter your Name' onChange={(e)=>setUsername(e.target.value)}/>
+        <textarea name='comment' value={comment} placeholder='whats on your mind' onChange={(e)=>setComment(e.target.value)}/>
+        <button onClick={addPost}>Post</button>
+       { post.map((props)=>(
+   <div className="card">
+     <p>{props.id}</p>
+      <p>{props.Username}</p>
+      <p>{props.comment}</p>
+      <button>x</button>
+   </div>
+       ))}
     </div>
   );
 }

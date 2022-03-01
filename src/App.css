@@ -1,38 +1,79 @@
+body{
+  display:grid;
+  place-items:center;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 .App {
-  text-align: center;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  width:80vw;
+  gap:10px;
+  height:auto;
+}
+.card{
+  width:50%;
+  height:auto;
+  justify-content:space-around;
+  display:flex;
+  flex-direction:column;
+  border-radius:10px;
+  background-color:beige;
+}
+.card>p:nth-child(1){
+  align-self:flex-start;
+  margin:10px;
+  font-size:bold;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card>p:nth-child(2){
+align-self:flex-start;
+  margin:10px;
+  width:50%;
+  word-wrap:break-word;
+  font-size:bold;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card>p:nth-child(3){
+  align-self:center;
+  align-items: center; 
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+input{
+  width:50%;
+  height:60px;
+  border-radius:10px;
+  background-color: beige;
+  border:none;
 }
-
-.App-link {
-  color: #61dafb;
+textarea{
+  width:50%;
+  height:200px;
+  border-radius: 10px;
+  background-color: beige;
+  border:none;
 }
+button{
+  background-color:yellow;
+  box-shadow:1px 2px green;
+  width:80px;
+  border-radius:10px;
+  height:40px;
+  border:none;
+}
+button:hover{
+  background-color: greenyellow;
+  box-shadow: 1px 2px yellow;
+}
+.card>button{
+  border-radius:50%;
+  background-color: rgb(145, 40, 40);
+  color:white;
+  width:30px;
+  height:30px;
+  box-shadow:none;
+  align-self: flex-end;
+  margin-left:50%;
+  margin:10px;
+  border:none;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
